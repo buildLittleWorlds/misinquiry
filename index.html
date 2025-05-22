@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=450">
+  <title>Misinquiry</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <h1>Misinquiry</h1>
+    
+    <nav class="category-nav">
+      <a href="#memory-log" class="category-link active" data-category="memory-log">Memory Log</a>
+      <a href="#breathing-wires" class="category-link" data-category="breathing-wires">Breathing Wires</a>
+      <a href="#missing-choirs" class="category-link" data-category="missing-choirs">Missing Choirs</a>
+      <a href="#all" class="category-link" data-category="all">All</a>
+    </nav>
+
+    <section class="category-description">
+      <div id="desc-memory-log" class="description active">
+        Daily notes on memorizing Shakespeare's works, starting with the Sonnets
+      </div>
+      <div id="desc-breathing-wires" class="description">
+        Explorations of AI's role in literary work and memorization
+      </div>
+      <div id="desc-missing-choirs" class="description">
+        Experimental analysis of patterns and structures, real and invented
+      </div>
+      <div id="desc-all" class="description">
+        All posts across categories
+      </div>
+    </section>
+
+    <ul class="post-list">
+      <li class="post-item memory-log" data-category="memory-log">
+        <a href="post-2025-05-24.html">
+          <span class="post-date">May 24, 2025</span>
+          <span class="post-title">Sonnet 15 and Visual Memory</span>
+          <span class="post-category">Memory Log</span>
+        </a>
+      </li>
+      <li class="post-item breathing-wires" data-category="breathing-wires">
+        <a href="post-2025-05-23-ai.html">
+          <span class="post-date">May 23, 2025</span>
+          <span class="post-title">AI as Memory Palace</span>
+          <span class="post-category">Breathing Wires</span>
+        </a>
+      </li>
+      <li class="post-item memory-log" data-category="memory-log">
+        <a href="post-2025-05-23.html">
+          <span class="post-date">May 23, 2025</span>
+          <span class="post-title">Writing by Hand</span>
+          <span class="post-category">Memory Log</span>
+        </a>
+      </li>
+      <li class="post-item missing-choirs" data-category="missing-choirs">
+        <a href="post-2025-05-22-analysis.html">
+          <span class="post-date">May 22, 2025</span>
+          <span class="post-title">The Fourteen-Line Architecture</span>
+          <span class="post-category">Missing Choirs</span>
+        </a>
+      </li>
+      <li class="post-item memory-log" data-category="memory-log">
+        <a href="post-2025-05-22.html">
+          <span class="post-date">May 22, 2025</span>
+          <span class="post-title">Distribution vs. Sequential</span>
+          <span class="post-category">Memory Log</span>
+        </a>
+      </li>
+    </ul>
+  </main>
+
+  <script>
+    // Simple category filtering
+    const categoryLinks = document.querySelectorAll('.category-link');
+    const postItems = document.querySelectorAll('.post-item');
+    const descriptions = document.querySelectorAll('.description');
+
+    categoryLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const category = link.dataset.category;
+        
+        // Update active nav link
+        categoryLinks.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+        
+        // Update description
+        descriptions.forEach(d => d.classList.remove('active'));
+        document.getElementById(`desc-${category}`).classList.add('active');
+        
+        // Filter posts
+        postItems.forEach(item => {
+          if (category === 'all' || item.dataset.category === category) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
