@@ -100,6 +100,20 @@
         });
       });
     });
+document.addEventListener('DOMContentLoaded', function() {
+  // Trigger the default filtering on page load
+  const defaultActiveLink = document.querySelector('.category-link.active');
+  if (defaultActiveLink) {
+    const category = defaultActiveLink.dataset.category;
+    postItems.forEach(item => {
+      if (category === 'all' || item.dataset.category === category) {
+        item.style.display = 'block';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  }
+});
   </script>
 </body>
 </html>
