@@ -95,11 +95,11 @@ h1 {
   border-left-color: #a8d5ba;
 }
 
-.post-item.breathing-wires {
+.post-item.ot {
   border-left-color: #a8c8e1;
 }
 
-.post-item.missing-choirs {
+.post-item.nt {
   border-left-color: #e1a8c8;
 }
 
@@ -135,7 +135,7 @@ h1 {
   font-size: 0.8em;
   color: #999;
   letter-spacing: 0.08em;
-  text-transform: uppercase;
+  text-transform: lowercase;
 }
 
 /* Individual Post Pages */
@@ -176,18 +176,18 @@ article {
   border-left-color: #a8d5ba;
 }
 
-.post-meta.breathing-wires {
+.post-meta.ot {
   border-left-color: #a8c8e1;
 }
 
-.post-meta.missing-choirs {
+.post-meta.nt {
   border-left-color: #e1a8c8;
 }
 
 .post-meta .category {
   font-size: 0.8em;
   color: #666;
-  text-transform: uppercase;
+  text-transform: lowercase;
   letter-spacing: 0.1em;
   margin-bottom: 0.3em;
 }
@@ -218,7 +218,7 @@ article ul li {
   position: relative;
 }
 
-/* Special styling for Missing Choirs analytical content */
+/* Special styling for nt analytical content */
 .analysis-note {
   background: #fafafa;
   border-left: 4px solid #e1a8c8;
@@ -233,7 +233,7 @@ article ul li {
   font-weight: bold;
 }
 
-/* Breathing Wires AI content */
+/* ot AI content */
 .ai-insight {
   background: #f8fafc;
   border-left: 4px solid #a8c8e1;
